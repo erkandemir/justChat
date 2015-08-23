@@ -2,17 +2,21 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var connectionCount = 0;
+
 app.get('/', function(req, res) {
 	res.sendfile('index.html');
 });
 
 io.on('connection', function(socket) {
-	console.log('a user connected');
+	connectionCount ++;
+	io.emit('connectionCount', connectionCount);
 
 	socket.on('disconnect', function() {
-		console.log('user disconnected');
-	});
+		connectionCount --;
+		io.emit('connectionCount', connectionCount);
 
+	});
 
 	socket.on('chat message', function(msg) {
 		io.emit('chat message', msg);

@@ -11,8 +11,8 @@ sendMsg = function()
 
 
 socket.on('chat_message', function(msg) {
-    var c_count = msg.toString().split("~")[1];
-    var text = msg.toString().split("~")[0];
+    var c_count = msg.split("```")[1];
+    var text = msg.toString().split("```")[0];
     if(c_count > 2)
         return;
     document.getElementById('messageContentArea').innerHTML += getMessageRow(text);

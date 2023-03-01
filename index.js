@@ -22,7 +22,7 @@ io.on('connection', function(socket) {
 
 	socket.on('chat_message', function(msg) {
 		if(msg.length > 0) {
-			io.emit('chat_message', msg + "~" + connectionCount);
+			io.emit('chat_message', msg + "```" + connectionCount);
 		}
 	});
 });

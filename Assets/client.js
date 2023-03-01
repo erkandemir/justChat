@@ -11,11 +11,9 @@ sendMsg = function()
 
 
 socket.on('chat_message', function(msg) {
-    var c_count = msg.split("```")[1];
-    var text = msg.toString().split("```")[0];
-    if(c_count > 2)
-        return;
-    document.getElementById('messageContentArea').innerHTML += getMessageRow(text);
+    var c_count = msg.split("~")[1];
+    var text = msg.split("~")[0];
+    document.getElementById('messageContentArea').innerHTML += getMessageRow(text, c_count);
     window.scrollTo(0, document.body.scrollHeight);
 });
 

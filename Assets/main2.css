@@ -1,4 +1,4 @@
-#chat1 .form-outline .form-control~.form-notch div {
+    #chat1 .form-outline .form-control~.form-notch div {
     pointer-events: none;
     border: 1px solid;
     border-color: #eee;
@@ -76,6 +76,9 @@
     
     html {
         touch-action: none
+    }
+    #chat1 {
+        border: 0;
     }
 
     

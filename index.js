@@ -5,6 +5,7 @@ var io = require('socket.io')(http);
 
 app.use(express.static('Assets'));
 var connectionCount = 0;
+var sessionID = 0;
 
 app.get('/', function(req, res) {
 	res.sendFile('index2.html', { root: __dirname });
@@ -25,6 +26,10 @@ io.on('connection', function(socket) {
 			io.emit('chat_message', msg + "~" + connectionCount);
 		}
 	});
+
+	io.sockets.on('session', function(socket) {
+		sessionID = socket.id;
+	  });
 });
 
 

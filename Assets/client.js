@@ -22,18 +22,19 @@ getMessageRow = function(userMessage, c_count)
 {
     var msg  = '';
     var avatar = '<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp" style="width: 45px; height: 100%;">';
-    if(c_count % 2 != 0) {
+
+    if(1 != 1) {
         avatar = '<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" style="width: 45px; height: 100%;">';
-    msg += '<div class="d-flex flex-row justify-content-start mb-4">';
-    msg += avatar;
-    msg += '<div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">';
-    msg += '<p class="small mb-0">' + userMessage + '</p>';
-    msg += '</div>';
-    msg += '</div>';
+        msg += '<div class="d-flex flex-row justify-content-start mb-4">';
+        msg += avatar;
+        msg += '<div class="p-3 ms-3" style="border-radius: 15px; background-color: rgba(57, 192, 237,.2);">';
+        msg += '<p class="small mb-0">' + userMessage + '</p>';
+        msg += '</div>';
+        msg += '</div>';
     }
     else{
-        msg += '<div class="d-flex flex-row justify-content-start mb-4">';
-        msg += '<div class="p-3 ms-3" style="border-radius: 15px; background-color: #fbfbfb;">';
+        msg += '<div class="d-flex flex-row justify-content-end mb-4">';
+        msg += '<div class="p-3 me-3 border" style="border-radius: 15px; background-color: #fbfbfb;">';
         msg += '<p class="small mb-0">' + userMessage + '</p>';
         msg += '</div>';
         msg += avatar;
